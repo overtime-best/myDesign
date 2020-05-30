@@ -67,11 +67,12 @@ $(function () {
     //frequesntly ask question 
     
     
-    $('.frequently-ask .fa-plus').click(function () {
+    $('.frequently-ask').click(function () {
         
-        $(this).toggleClass('rotate');
+        $(this).find('.fa-plus').toggleClass('rotate');
         $('.' + $(this).data('class')).slideToggle(500);
         $('.' + $(this).data('color')).toggleClass('main-color');
+        $(window).console.log($(this).data('color'));
     });
     
     // Scroll To Top 
@@ -93,24 +94,63 @@ $(function () {
     $('.flexslider').flexslider({
         animation: "fade",
         controlNav: true,
-        slideshowSpeed: 2500
+        slideshowSpeed: 5000
     });
     
     //sliderText.css('paddingTop', ($(window).height() - navbar.height() - sliderText.height()) / 2);
 
-    // Adjust Magnific Popup 
+    /* Adjust Magnific Popup */
 
     $('.box').magnificPopup({
         delegate: 'a', // child items selector, by clicking on it popup will open
         type: 'image',
+        removalDelay: 300,
+        mainClass: 'mfp-with-zoom',
         gallery: {
             enabled: true
-        },
-        removalDelay: 300,
-        mainClass: 'mfp-fade'
+        }
+	// By defailt it looks for an image tag:
     });
-    
-    
+    /*MagnificPopup
+	var magnifPopup = function () {
+		$('.box').magnificPopup({
+            delegate: 'a',
+			type: 'image',
+			removalDelay: 300,
+			mainClass: 'mfp-with-zoom',
+			gallery: {
+				enabled: true
+			},
+			zoom: {
+				enabled: true, // By default it's false, so don't forget to enable it
+
+				duration: 300, // duration of the effect, in milliseconds
+				easing: 'ease-in-out', // CSS transition easing function
+
+				// The "opener" function should return the element from which popup will be zoomed in
+				// and to which popup will be scaled down
+				// By defailt it looks for an image tag:
+				opener: function (openerElement) {
+				// openerElement is the element on which popup was initialized, in this case its <a> tag
+				// you don't need to add "opener" option if this code matches your needs, it's defailt one.
+				    return openerElement.is('img') ? openerElement : openerElement.find('img');
+				}
+			}
+		});
+    };
+    var magnifVideo = function() {
+		$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+        disableOn: 700,
+        type: 'iframe',
+        mainClass: 'mfp-fade',
+        removalDelay: 160,
+        preloader: false,
+
+        fixedContentPos: false
+    });
+	};
+    magnifPopup();
+    magnifVideo();*/
     /* 
 .portfolio {
     padding:50px 0;
@@ -155,6 +195,4 @@ $(function () {
     color: #FFF
 }
 */
-    
-    
 });
