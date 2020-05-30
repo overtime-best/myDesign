@@ -2,7 +2,7 @@
 
 body {
     color: #000;
-    font-family: "Droid Sans", Arial, sans-serif;
+    font-family: "lora-regular", serif;
     font-size: 16px
     /*perspective: 600px   You Must Know The This Will Not Work With Fixed Position*/
 }
@@ -37,7 +37,7 @@ p{
 }
 a{
 	transition: all 0.3s ease-in-out;
-    text-decoration: none;
+    text-decoration: none !important;
     color: #222 ;
     border: 0 !important
 }
@@ -49,19 +49,24 @@ a{
 
 .navbar {
     margin-bottom: 0;
-    border-radius: 0
-    
+    border-radius: 0;    
 }
 .navbar-fixed-top {
     z-index: 9999999999
 } 
 .navbar a.navbar-brand{
     
-    color: #000 !important;
+    color: #FFF !important;
     font-size: 30px;
-    font-weight: bolder
-}
+    font-weight: bolder;
+    text-transform: uppercase;
+    background: #222;
 
+    
+}
+.navbar-brand span {
+    color: rgb(255, 81, 38)
+}
 .navbar li > a:hover{
     color: rgb(255, 81, 38) !important
 }
@@ -70,8 +75,6 @@ a{
 
 
 /*Start Our Header*/
-
-
 .header .flexslider {
     height: 100%;
     border: 0;
@@ -82,7 +85,7 @@ a{
     height: 100%;
     width: 100%;
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 .header .flexslider .slides li {
     
@@ -91,6 +94,7 @@ a{
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+    display: block
 }
 .flexslider .text-content {
     display: table;
@@ -120,7 +124,8 @@ a{
     -o-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    font-size: 25px
+    font-size: 25px;
+    text-transform: capitalize
 }
 .header .flexslider .slides .inner-text-content  .slider-button a{
     color: #FFF;
@@ -143,8 +148,23 @@ a{
     
     background: rgba(255, 255, 255, 0.7)
 }
-
-
+@media(max-width: 767px) {
+    
+    .header .flexslider h1 {
+        font-size: 20px;
+        margin-top: 112px;
+    }
+    .flex-control-nav {
+        
+        bottom: calc(2%);
+    }
+    
+        .header .flexslider .slides .inner-text-content .slider-button {
+        padding: 10px 11px;
+        font-size: inherit;
+        border-radius: 5px;
+    }
+}
 /* End Our Header */
 
 
@@ -231,16 +251,43 @@ a{
     padding-top: 50px
 
 }
+.box {
+    position: relative;
+    overflow: hidden; 
+    margin-bottom: 25px;
+}
+.port-heading p {
+    margin-bottom: 50px
+}
 .box .port-img {
 
-    position: relative;
-    z-index: 9999;
-    top: 150px;
-    display: block;
-    font-weight: bolder;
-    font-size: 20px;
-    color: transparent;
+    position: absolute;
+    color: #F0F;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0
     
+}
+.port-img .table{
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 100%;
+    top: -10%;
+    opacity: 0;
+    transition: .3s all ease-in-out;
+}
+.port-img .cell {
+    display: table-cell;
+    vertical-align: middle
+}    
+.port-img:hover .table{
+    visibility: visible !important
+    color: red !important;
+    opacity: 1;
+    top: 0;
 }
 .portfolio .myHeader {
     font-size: 30px;
@@ -286,7 +333,7 @@ a{
 }
 
 .portfolio .box .overlay {
-    z-index: 100;
+    z-index: 10;
     display: none;
     border-radius: 10px 
 }
@@ -305,15 +352,19 @@ a{
 
 @media(max-width: 767px)  {
     
-    .box .port-img {
-        top: 170px;
-        
+.box img{
+
+
+}
+    .port-heading p{
+        text-align: center;
+        font-size: 14px
     }
 }
 @media(min-width: 768px) and (max-width: 992px){
     
     .box .port-img {
-        top: 280px !important;
+/*top: 280px !important;*/
     }
 }
 /* End Portifolio Section */
@@ -340,12 +391,14 @@ a{
     
     color: #555;
     line-height: 1.7;
-    margin-bottom: 50px
+    margin-bottom: 50px;
+    font-size: 18px;
 }
 
 .frequently-ask {
     background: #FFF;
     margin-bottom: 20px;
+    cursor: pointer
     
 }
 .frequently-ask h3 {
@@ -382,7 +435,51 @@ a{
     color: rgb(255, 81, 38) !important
 }
 
-
+@media(max-width: 767px) {
+    
+    
+    .frequently-ask .fa-plus {
+        left: 160px; 
+        color: #4d494b8c
+        }
+    
+    .header .arrow {
+        width: 35px !important;
+        height: 35px !important;
+        right: 18px!important;
+        line-height: 32px !important;
+        box-shadow: 2px -2px #555, -2px 2px #555, -2px -2px #555, 2px 2px #555 !important;}
+    
+     p{
+        
+        font-size: 14px !important;
+        line-height: 1.8 !important;
+        text-align: left 
+    }
+    .myHeader {
+        font-size: 22px !important;
+    }
+    .frequently-ask p {
+    border-top: 1px solid #CCC;
+    border-radius: 0;
+    padding: 20px 0 0;
+    margin-bottom: 10px;
+    text-align: left;
+    margin-left; 0;
+    margin-right: 0;
+    font-size: 13px;
+    font-weight: 490;
+    
+}
+    .frequently-ask h3 {
+        
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 16px
+    } 
+} 
 @media(min-width: 767px) and (max-width: 992px) {
     
     .frequently-ask .fa-plus {
@@ -392,7 +489,7 @@ a{
 }
 @media(min-width: 768px) {
     
-    .col-sm-6 {
+    .frequently-ask {
        width: 48%;
         margin-right: 2%
     }
@@ -449,13 +546,38 @@ a{
 }
 .contact p {
     
-    font-size: 20px;
-    color: #999;
+    font-size: 18px;
+    color: #555;
     line-height: 1.7;
     
 }
 
-
+@media(max-width: 767px) {
+    
+    .contact p {
+    color: #777;
+    line-height: 1.7;
+    font-size: 15px;
+    text-align: left
+    }
+    .con h2 {
+        font-size: 20px;
+        
+    }   
+    .con h2 span {
+    font-size: 25px;
+}
+    .footer h3 {
+        
+        font-size: 16px;
+        font-weight: normal
+    }
+     .footer h3 span{
+        
+        font-size: 16px;
+        font-weight: normal
+    }
+}
 /* End Contact US */
 
 /* Start Footer */
