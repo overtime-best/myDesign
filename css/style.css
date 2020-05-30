@@ -61,13 +61,6 @@ a{
     font-weight: bolder;
     text-transform: uppercase;
     background: #222;
-<<<<<<< HEAD
-
-=======
-    display: block;
-    position: relative;
-    height: 50px;
->>>>>>> 67f117667a3c5fefb06f0027c15e377c6625474d
     
 }
 .navbar-brand span {
@@ -81,13 +74,7 @@ a{
 
 
 /*Start Our Header*/
-<<<<<<< HEAD
-=======
-.header{
 
-}
-
->>>>>>> 67f117667a3c5fefb06f0027c15e377c6625474d
 .header .flexslider {
     height: 100%;
     border: 0;
@@ -169,7 +156,7 @@ a{
     }
     .flex-control-nav {
         
-        bottom: calc(2%);
+        bottom: calc(10%);
     }
     
         .header .flexslider .slides .inner-text-content .slider-button {
